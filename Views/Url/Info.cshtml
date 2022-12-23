@@ -1,0 +1,54 @@
+﻿@model UrlModel
+@{
+    ViewData["Title"] = "Info";
+}
+
+<div class="border p-3 mt-4">
+    <div class="row pb-2">
+        <h2>Record info</h2>
+        <hr />
+    </div>
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Record Id
+                </th>
+                <th>
+                    Original Url
+                </th>
+                <th>
+                    Short Url
+                </th>
+                <th>
+                    Created by
+                </th>
+                <th>
+                    Date of creation
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Model.Id
+                </td>
+                <td style="width:40%; overflow:hidden; word-break:break-all; text-overflow:ellipsis">
+                    <a href="@Model.OriginUrl" style="text-decoration:none">@Model.OriginUrl</a>
+                </td>
+                <td>
+                    <a href="@Model.OriginUrl" style="text-decoration:none">@Model.ShortUrl</a>
+                </td>
+                <td>
+                    @Model.CreatedBy
+                </td>
+                <td>
+                    @Model.DateOfCreation
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a asp-controller="Url" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Back to list
+    </a>
+</div>

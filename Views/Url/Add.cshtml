@@ -1,0 +1,18 @@
+﻿@model UrlModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add Url</h2>
+        </div>
+        <div class="mb-3">
+            <label asp-for="OriginUrl"></label>
+            <input asp-for="OriginUrl" class="form-control mt-2" />
+            <span asp-validation-for="OriginUrl" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create short URL</button>
+        <a asp-controller="Url" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to list
+        </a>
+    </div>
+</form>
